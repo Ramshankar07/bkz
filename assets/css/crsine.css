@@ -161,6 +161,70 @@ h6 {
   min-width: 300px;
   overflow: hidden;
 }
+.container1 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  width: 35rem;
+  padding: 3rem;
+  gap: 1rem;
+  background-color: white;
+  box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateY(5%);
+  visibility: hidden;
+  transition: all 0.25s;
+  z-index: -1;
+
+  h2 {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  button {
+    border: none;
+    cursor: pointer;
+  }
+
+  .button {
+    padding: 0.5rem;
+    background-color: $blue;
+    color: white;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.25s;
+  }
+
+  .button:hover {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .close {
+    position: absolute;
+    color: black;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 1.25rem;
+    right: 0;
+    top: 0;
+    margin: 1rem 1.5rem;
+  }
+}
+
+.popup.active {
+  opacity: 1;
+  transform: translateY(0%);
+  visibility: visible;
+  z-index: 1;
+}
 
 .container {
   padding-left: 15px;
@@ -6990,47 +7054,8 @@ h6 {
   }
 }
 
-.popup-wrap{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  display: none;
-  /*transition: all 1.7s ease;*/
-}
 
-.popup{
-  position: relative;
-  width: 500px;
-  height: 500px;
-  background-color: rgba(0,0,0,1);
-  margin: 100px auto;
-}
-.popup-timer{
-  width: auto;
-  height: 25px;
-  color: #fff;
-  position: absolute;
-  right: 10px;
-  line-height: 25px;
-  padding: 0px 10px;
-}
-.btn-close{
-  background-color: #fff;
-  width: 25px;
-  height: 25px;
-  text-align: center;
-  line-height: 22px;
-  position: absolute;
-  right: -10px;
-  top: -10px;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  border-radius: 50%;
-}
-.btn-close:hover{
-  transform: rotate(360deg);
-}
+
 
 .main-slider .thm-btn {
   font-size: 18px;
