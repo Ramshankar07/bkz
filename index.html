@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="Crsine HTML Template For Car Services" />
+    <meta name="description" content="Bike service around tuticorin" />
 
     <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
@@ -96,7 +96,35 @@
         <div class="stricky-header stricked-menu main-menu">
             <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
         </div><!-- /.stricky-header -->
+        <div class="popup-wrap">
+            <div class="popup">
+                <div class="popup-timer"><span class="seconds"></span> second(s) left</div>
+                <div class="btn-close">x</div>
+            </div>
+        </div>
+        <script>$(document).ready(function(){
 
+            $(window).load(function(){
+                $duration = 10;
+                $('.seconds').text($duration);
+                $('.popup-wrap').fadeIn(1500);
+        
+                $myTimer = setInterval(function(){ startTimer() }, 1000);
+                $('.popup .btn-close').on("click",function(){
+                    clearInterval($myTimer);
+                    $('.popup-wrap').fadeOut(500);
+                });
+                
+                function startTimer(){
+                    $duration--;
+                    $('.seconds').text($duration);
+                    if($duration==0){
+                        clearInterval($myTimer);
+                        $('.popup-wrap').fadeOut(500);
+                    }
+                }
+            });
+        });</script>
 
         <section class="main-slider">
             <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
