@@ -1982,7 +1982,7 @@ h6 {
   display: flex;
   align-items: center;
   padding-left: 50px;
-  clip-path: polygon(0 0, 100% 0, 86.5% 101%, 0% 101%);
+  /* clip-path: polygon(0 0, 100% 0, 86.5% 101%, 0% 101%); */
 }
 
 @media (max-width: 1199px) {
